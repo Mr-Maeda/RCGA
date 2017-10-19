@@ -18,7 +18,7 @@ using namespace std;
     //個体数 (解候補の量,1世代の定員)
     int X = 10;
     //世代数 (何回交叉,選択を繰り返すか)
-    int GENERATION = 300;
+    int GENERATION = 30;
 
 /*
     MGG パラメーター設定
@@ -57,8 +57,15 @@ mt19937 mt(rnd()); //  メルセンヌツイスターの32ビット版、引数�
 
 
 //プロトタイプ宣言
+//blxalpha.cc
 vector<double> blxAlpha(vector<double> parent1,vector<double> parent2);
+//fitness.cc
 double calcFitness(vector<double> params);
+void outPut(vector<double> params);
+double readResultFile();
+//initialize.cc
 void initializeCandidate();
+//display.cc
 void displayAnswer();
+//mgg.cc
 void mgg();

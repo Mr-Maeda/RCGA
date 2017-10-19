@@ -13,7 +13,7 @@ void initializeCandidate(){
     //遺伝子の初期化
     for(int x = 0;x < X;x++){
 
-        std::uniform_real_distribution<> random_double(0, 100);     // [0, 99] 範囲の一様乱数
+        std::uniform_real_distribution<> random_double(0, 5);     // [min, max] 範囲の一様乱数
 
         for(int dim = 0; dim < DIMENTION;dim++){
             candidate[x][dim] = random_double(mt);
