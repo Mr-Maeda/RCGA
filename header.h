@@ -14,7 +14,7 @@ using namespace std;
     GA パラメーター設定
 */
     //次元数 (遺伝子のパラメーター数)
-    int DIMENTION = 5;
+    int DIMENTION = 4;
     //個体数 (解候補の量,1世代の定員)
     int X = 10;
     //世代数 (何回交叉,選択を繰り返すか)
