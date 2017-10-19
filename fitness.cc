@@ -35,10 +35,6 @@ double calcFitness(vector<double> params){
 
     fitness = readResultFile();
 
-
-
-
-
     return fitness;
 
 }

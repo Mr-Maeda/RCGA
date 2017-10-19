@@ -14,6 +14,8 @@
 
 using namespace std;
 
+string allCandidateFileName = "allfitness.csv";
+
 int main(){
 
     //初期遺伝子を設定
@@ -42,6 +44,17 @@ int main(){
         //         cout << candidate[x][dim] << " ";
         //     }cout << endl;
         // }
+
+        //解候補をファイルに出力
+        ofstream ofs;
+        ofs.open(allCandidateFileName.c_str(),ios::app);
+        if(!ofs){
+            cout << "FileOpenError:" << allCandidateFileName << endl;
+            exit(-1);
+        }
+        for(int x = 0; x < X;x++){
+           ofs << candidatesFitness[x] << endl;
+        }
 
         //選択,交叉　MGG(Minimal Generation Gap)
         mgg();
