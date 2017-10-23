@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <algorithm>
-//vector型を使用するため
 #include <vector>
 #include <iostream>
 #include <complex>
-//乱数生成のため
+#include <fstream>
 #include <random>
 using namespace std;
 
@@ -33,6 +31,20 @@ using namespace std;
     double alpha = 0.5;
 
 
+/*
+    ファイルのパス
+*/
+
+//全評価値を保存しておくファイル
+string allFitnessFileName = "Data/allfitness.csv";
+//全候補者の遺伝子データを保存しておくファイル
+string allCandidateFileName = "Data/allcandidate.csv";
+//遺伝子データを出力する外部ファイル
+string outPutFileName = "Data/params.csv";
+//エージェントが計算した評価値を格納する外部ファイル
+string fitnessValueFileName = "Data/result.csv";
+//エージェントの実行を行うShellの実行スクリプト
+string agentStartScript = "./experiment.sh";
 
 
 /*
@@ -65,6 +77,7 @@ void outPut(vector<double> params);
 double readResultFile();
 //initialize.cc
 void initializeCandidate();
+void initializeFile(string path);
 //display.cc
 void displayAnswer();
 //mgg.cc

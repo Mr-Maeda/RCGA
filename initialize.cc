@@ -1,6 +1,7 @@
 /*
 
     解候補candidateの初期値の設定を行う関数
+    ファイルの初期化関数も
 
 */
 //
@@ -23,6 +24,25 @@ void initializeCandidate(){
 
         }
     }
+}
+
+//ファイルの中身を初期化する
+void initializeFile(string path){
+
+    ofstream ofs;
+
+    ofs.open(path);
+
+    if(!ofs){
+        cout << "FileNotFound:" << path << endl;
+        exit(-1);
+    }
+
+    ofs << "";
+    ofs.close();
+
+    return;
+
 }
 //
 // void readInitParamsFromCSV(string path){

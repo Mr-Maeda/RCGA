@@ -2,20 +2,9 @@
 
     評価値の計算を行う関数
     評価値の定義
+    遺伝子データのをエージェントとやり取りする場合のファイル操作など
 
 */
-
-#include <fstream>
-
-//遺伝子データを出力する外部ファイル
-string outPutFileName = "params.csv";
-//エージェントが計算した評価値を格納する外部ファイル
-string fitnessValueFileName = "result.csv";
-
-
-//エージェントの実行を行うShell
-string agentStartScript = "./experiment.sh";
-
 
 double calcFitness(vector<double> params){
 
@@ -39,6 +28,7 @@ double calcFitness(vector<double> params){
 
 }
 
+//エージェントが書き出す結果をファイルから回収
 double readResultFile(){
 
     ifstream ifs;
@@ -67,6 +57,7 @@ double readResultFile(){
 
 }
 
+//エージェントが使用する遺伝子データを外部ファイルへ出力
 void outPut(vector<double> params){
 
     ofstream ofs;
